@@ -1,10 +1,12 @@
+import getMainLayout from "@/components/layouts/MainLayout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { Container, Content } from "../components/Container";
 import { services } from "../services";
+import { NextPageWithLayout } from "./_app";
 
-const SamplePage = () => {
+const SamplePage: NextPageWithLayout = () => {
   const router = useRouter();
   const { api } = services;
 
@@ -53,5 +55,5 @@ const SamplePage = () => {
     </Container>
   );
 };
-
+SamplePage.getLayout = getMainLayout;
 export default SamplePage;

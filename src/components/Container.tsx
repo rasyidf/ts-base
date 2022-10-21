@@ -1,5 +1,4 @@
-import Head from "next/head";
-import { Header } from "./Header";
+import Head from "next/head"; 
 
 type ContainerProps = {
   title: string;
@@ -16,8 +15,7 @@ export const Container: React.FC<React.PropsWithChildren<ContainerProps>> = ({ c
       </Head>
 
       <div className="container p-2 mx-auto min-w-[382px]">
-        <div className="flex flex-col">
-          <Header />
+        <div className="flex flex-col"> 
 
           {children}
         </div>

@@ -9,9 +9,10 @@ import {
   TextInput,
   createStyles,
 } from '@mantine/core';
-import { ArchiveBox, BellSimple, MagnifyingGlass as Search, Gear as SettingIcon, ArrowLineLeft as LogoutIcon } from "phosphor-react";
+import { ArchiveBox, BellSimple, MagnifyingGlass as Search, Gear as SettingIcon, ArrowLineLeft as LogoutIcon, Books } from "phosphor-react";
 import { useDisclosure } from '@mantine/hooks';
 import { UserButton } from "./UserButton";
+import Link from "next/link";
 
 
 const useStyles = createStyles((theme) => ({
@@ -45,7 +46,7 @@ export function HeaderTabs({ user }: HeaderTabsProps) {
     <div className={classes.header}>
       <Container>
         <Group position="apart">
-          <ArchiveBox size={24} />
+          <Books color="#007acc" size={24} weight="duotone" />
           <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
           <TextInput rightSection={<Search size={20} />} radius="md" placeholder="Search" />
           <Menu
@@ -60,10 +61,12 @@ export function HeaderTabs({ user }: HeaderTabsProps) {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Item icon={<BellSimple size={14} color={theme.colors.red[6]} weight="bold" />}>
-                Notification
+                Notifications
               </Menu.Item>
               <Menu.Label>Settings</Menu.Label>
-              <Menu.Item icon={<SettingIcon size={14} weight="bold" />}>Account settings</Menu.Item>
+              <Link href="/settings" passHref>
+                <Menu.Item icon={<SettingIcon size={14} weight="bold" />}>Account settings</Menu.Item>
+              </Link>
               <Menu.Divider />
               <Menu.Item icon={<LogoutIcon size={14} weight="bold" />}>Logout</Menu.Item>
             </Menu.Dropdown>

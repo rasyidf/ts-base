@@ -1,13 +1,15 @@
 
 import type { NextPageWithLayout } from './_app'
-import { AppShell, ScrollArea, Navbar, Footer, Header, Container } from "@mantine/core";
+import { AppShell, ScrollArea, Navbar, Footer, Header, Container, Card } from "@mantine/core";
 import { HeaderTabs } from "@/components/Header";
-import getMainLayout from './layouts/MainLayout';
+import getMainLayout from '../components/layouts/MainLayout';
 // async import HeaderTabs from "@/components/Header"; 
 const Home: NextPageWithLayout = () => {
   return (
     <Container>
-      Hehehe
+      <Card>
+        <h1 className="text-2xl font-bold">Welcome to SSR Boilerplate</h1>
+      </Card>
     </Container>
   );
 };
