@@ -4,7 +4,8 @@ import { Header } from "./Header";
 type ContainerProps = {
   title: string;
 };
-export const Container: React.FC<ContainerProps> = ({ children, title }) => {
+
+export const Container: React.FC<React.PropsWithChildren<ContainerProps>> = ({ children, title }) => {
   const _title = title + " | SSR Boilerplate";
 
   return (
@@ -29,7 +30,7 @@ type ContentProps = {
   className?: string;
   cardClassName?: string;
 };
-export const Content: React.FC<ContentProps> = ({
+export const Content: React.FC<React.PropsWithChildren<ContentProps>> = ({
   children,
   className,
   cardClassName,
@@ -51,7 +52,7 @@ type CardProps = {
   border?: boolean;
   morePY?: boolean;
 };
-export const Card: React.FC<CardProps> = ({
+export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   children,
   className,
   border = false,

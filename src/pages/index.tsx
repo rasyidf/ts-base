@@ -1,33 +1,17 @@
-import type { NextPage } from "next";
-import { Container, Content } from "../components/Container";
-import { GoToLink } from "../components/GoToLink";
 
-const Home: NextPage = () => {
+import type { NextPageWithLayout } from './_app'
+import { AppShell, ScrollArea, Navbar, Footer, Header, Container } from "@mantine/core";
+import { HeaderTabs } from "@/components/Header";
+import getMainLayout from './layouts/MainLayout';
+// async import HeaderTabs from "@/components/Header"; 
+const Home: NextPageWithLayout = () => {
   return (
-    <Container title="Index">
-      <Content cardClassName="space-y-2">
-        <h1 className="text-xl font-semibold">
-          Simple starter for NextJS + TailwindCSS.
-        </h1>
-
-        <p>
-          Comes with pre-ready Docker and Traefik setup. Includes auto
-          generation of https certificates. Easy deployable on DigitalOcean and
-          similar platforms.
-        </p>
-
-        <div>
-          <div>
-            <GoToLink where="/sample" title="Sample page" />
-          </div>
-
-          <div>
-            <GoToLink where="/doesnt-exist" title="404 page" />
-          </div>
-        </div>
-      </Content>
+    <Container>
+      Hehehe
     </Container>
   );
 };
+
+Home.getLayout = getMainLayout;
 
 export default Home;
